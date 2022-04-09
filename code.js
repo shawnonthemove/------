@@ -76,3 +76,28 @@
 // }
 // console.log(stack("A(A(A2B)2)3C2"));
 
+// 判断对象的层数
+// const obj = {
+//   a: { b: [1] },
+//   c: { d: { e: { f: 1 } } },
+//   z: { s: { a: {x: { sw: 's'} } } }
+// }
+
+// console.log(loopGetLevel(obj)) // 4
+
+// function loopGetLevel(obj) {
+//   if (typeof obj !== 'object') return 0;
+//   let tmp = []
+//   for (let key in obj) {
+//     tmp.push(1+loopGetLevel(obj[key]))
+//   }
+//   return Math.max(...tmp);
+// }
+
+// (a == 1 && a == 2 && a == 3) = true
+let a = {
+  i: 1,
+  toString: () => {
+    return a.i++;
+  }
+}
