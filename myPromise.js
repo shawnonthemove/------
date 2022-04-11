@@ -77,7 +77,7 @@ class MyPromise {
               err => MyPromise.resolve(callback()).then(() => {throw err}));
   }
 
-  all (promises) {
+  all(promises) {
     const res = [];
     let count = 0;
     return new MyPromise((resolve, reject) => {
@@ -97,7 +97,7 @@ class MyPromise {
     })
   }
 
-  race (promises) {
+  race(promises) {
     return new MyPromise((resolve, reject) => {
       promises.map(promise => {
         if (promise instanceof MyPromise) {
@@ -111,7 +111,7 @@ class MyPromise {
   allSettled(promises) {
     let result = [];
     let count = 0;
-    return newMyPromise((resolve, reject) => {
+    return new MyPromise((resolve, reject) => {
       let addData = (str, pro, index) => {
         result[index] = {
           state: str,
