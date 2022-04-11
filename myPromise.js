@@ -68,6 +68,15 @@ class MyPromise {
     return promise;
   }
 
+  catch(callback) {
+    this.then(null, callback);
+  }
+
+  finally(callback) {
+    this.then( res => MyPromise.resolve(callback()).then(() => res), 
+              err => MyPromise.resolve(callback()).then(() => {throw err}));
+  }
+
   all (promises) {
     const res = [];
     let count = 0;
@@ -98,7 +107,7 @@ class MyPromise {
       })
     })
   }
-  
+
   allSettled(promises) {
     let result = [];
     let count = 0;
