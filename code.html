@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    function test(timestamp) {
-      console.log(`🚀🚀hello ~ requestAnimationFrame ${timestamp}`);
-      if (timestamp < 500) {
-        requestAnimationFrame(test);
-      }
-    }
-    requestAnimationFrame(test);
-  </script>
-</body>
+<html>
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+        <ul>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+        </ul>
+
+        <script type="text/javascript">
+            // 补全代码
+            document.getElementsByTagName('ul')[0].onclick=function(e){
+                e.target.innerHTML+='.';                                                    
+            }
+        </script>
+    </body>
 </html>
